@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 st.title("Aplikasi Prediksi Harga Laptop")
 
 # Menu sidebar untuk memilih antara Overview, Data Visualization, atau Prediction
-menu = st.sidebar.selectbox("Menu", ["Overview", "Data Visualization", "Prediction"])
+menu = st.sidebar.selectbox("Menu", ["Overview", "Data Visualization", "Prediction", "About Us"])
 
 # Fungsi untuk memuat dataset dan menyimpannya di cache
 @st.cache_data
@@ -136,3 +136,25 @@ elif menu == "Prediction":
     # Menampilkan kinerja model (R-squared)
     r_squared = model.score(X_test_scaled, y_test)  # Menghitung R-squared model
     st.write(f"R-squared Model: {r_squared:.2f}")  # Menampilkan nilai R-squared
+
+elif menu == "About Us":
+    st.title("About Us")
+    st.write("""
+    Selamat datang di aplikasi Machine Learning LaptopPrice!
+
+    Aplikasi ini dirancang untuk membantu pengguna memprediksi harga laptop berdasarkan berbagai fitur menggunakan algoritma machine learning. Tujuan kami adalah untuk memberikan prediksi harga yang akurat dan bermanfaat, agar pengguna dapat membuat keputusan pembelian yang lebih bijak.
+
+    **Fitur-fitur aplikasi kami meliputi:**
+    - **Pemodelan Prediktif:** Menggunakan teknik machine learning canggih untuk memprediksi harga laptop.
+    - **Antarmuka Ramah Pengguna:** Antarmuka yang mudah dinavigasi sehingga memudahkan prediksi harga.
+    - **Visualisasi Data:** Grafik dan bagan yang mendetail untuk membantu pengguna memahami tren dan pola harga.
+
+    **Tentang Tim Kami:**
+    Tim kami terdiri dari ilmuwan data dan insinyur perangkat lunak yang berdedikasi untuk membuat teknologi yang bermanfaat dan mudah diakses untuk semua orang. Kami percaya pada kekuatan machine learning untuk mengubah cara kita membuat keputusan dan berharap aplikasi ini dapat memberikan nilai tambah pada pengalaman pembelian laptop Anda.
+
+    Terima kasih telah menggunakan aplikasi kami!
+
+    **Informasi Kontak:**
+    - Email: support@laptoppriceapp.com
+    - Situs Web: www.laptoppriceapp.com
+    """)
